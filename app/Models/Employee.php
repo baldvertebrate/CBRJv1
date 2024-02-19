@@ -17,4 +17,8 @@ class Employee extends Model
             'account_status',
             'remarks',
     ];
+    public function person(): BelongsTo
+    {
+        return $this->belongsTo(Person::class);
+    }
 }

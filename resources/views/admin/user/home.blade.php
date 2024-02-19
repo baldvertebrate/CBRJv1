@@ -36,8 +36,10 @@
                     @php $i=1; @endphp
                     <tr>
                         <td>{{$i}}</td>
+                        <td>@php $person = App\Models\Person::where('id', '=', $user->employee->id)->first();
+                            @endphp</td>
                         <td>{{$user -> email}}</td>
-                        <td></td>
+                        <td>Status</td>
                         <td>
                             <form method="post" action="#"> 
                                 <a href="#" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a>

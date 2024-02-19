@@ -12,12 +12,17 @@ class Person extends Model
         'first_name',
         'last_name',
         'birth_date',
-       'gender',
+        'gender',
         'civil_status',
         'email',
         'contact_no',
         'sitio',
         'barangay',
-       'address_id',
+        'address_id',
     ];
+
+    public function employee():HasOne
+    {
+        return $this-hasOne(Employee::class);
+    }
 }
