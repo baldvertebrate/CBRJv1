@@ -3,7 +3,7 @@
 @section('title', 'Users')
 
 @section('content_header')
-    <h1>Users</h1>
+    <h1>User</h1>
 @stop
 
 @section('content')
@@ -17,23 +17,26 @@
         <div class="card-header">
             <h3 class="card-title">List</h3>
             <div class="card-tools">
-                <a href="#" class="btn btn-primary btn-sm">New Users</a>
+                <a href="#" class="btn btn-primary btn-sm">New User</a>
             </div>
         </div>
+
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th width="10%">ID</th>
-                        <th>Name</th>
-                        <th width="15%">Action</th>
+                        <th width="15%">ID</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th width="19%">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                
-                
+                    @foreach($users as $user)
+                    @php $i=1; @endphp
                     <tr>
-                        <td></td>
+                        <td>{{$i}}</td>
+                        <td>{{$user -> email}}</td>
                         <td></td>
                         <td>
                             <form method="post" action="#"> 
@@ -45,9 +48,11 @@
                             </form>
                         </td>
                     </tr>
-                   
+                    @php $i++; @endphp
+                    @endforeach
                 </tbody>
-                
+                <tfoot>
+                </tfoot>
             </table>
         </div>
     </div>
