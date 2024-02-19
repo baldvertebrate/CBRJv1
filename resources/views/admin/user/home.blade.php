@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Departments')
+@section('title', 'Users')
 
 @section('content_header')
-    <h1>Departments</h1>
+    <h1>Users</h1>
 @stop
 
 @section('content')
@@ -17,10 +17,9 @@
         <div class="card-header">
             <h3 class="card-title">List</h3>
             <div class="card-tools">
-                <a href="{{route('admin.department.create')}}" class="btn btn-primary btn-sm">New Department</a>
+                <a href="#" class="btn btn-primary btn-sm">New Users</a>
             </div>
         </div>
-
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -31,13 +30,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($department as $departments)
+                
+                
                     <tr>
-                        <td>{{$departments->id}}</td>
-                        <td>{{$departments->name}}</td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <form method="post" action="{{route('admin.department.destroy', $departments)}}"> 
-                                <a href="{{route('admin.department.modify', $departments)}}" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a>
+                            <form method="post" action="#"> 
+                                <a href="#" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a>
                            
                                 @csrf 
                                 @method('delete')
@@ -45,7 +45,7 @@
                             </form>
                         </td>
                     </tr>
-                    @endforeach
+                   
                 </tbody>
                 
             </table>

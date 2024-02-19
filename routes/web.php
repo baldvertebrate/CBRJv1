@@ -36,6 +36,11 @@ Route::post('/admin/position/store', [App\Http\Controllers\PositionController::c
 Route::delete('/admin/position/{positions}', [App\Http\Controllers\PositionController::class, 'destroy'])->name('admin.position.destroy');
 Route::get('/admin/position/{positions}', [App\Http\Controllers\PositionController::class, 'modify'])->name('admin.position.modify');
 Route::put('/admin/position/{positions}', [App\Http\Controllers\PositionController::class, 'update'])->name('admin.position.update');
+//Users
+Route::get('/admin/user', [App\Http\Controllers\UserController::class, 'index'])->name('admin.user.home');
+
+
+
 
 
 Auth::routes();
