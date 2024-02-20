@@ -35,11 +35,23 @@
                     @foreach($users as $user)
                     @php $i=1; @endphp
                     <tr>
-                        <td>{{$i}}</td>
-                        <td>@php $person = App\Models\Person::where('id', '=', $user->employee->id)->first();
-                            @endphp</td>
+                        <td>{{ $i }}</td>
+                        <td>
+                            @php 
+                            $person = App\Models\Person::where('id', '=', $user->employee->id)->first();
+                            @endphp
+                            {{$person->first_name}}
+                            </td>
                         <td>{{$user -> email}}</td>
-                        <td>Status</td>
+                        <td>@php 
+                            $employee = App\Models\Employee::where('id', '=', $user->employee->id)->first();
+                            @endphp
+
+                            @if($employee->account_status ==1)
+                            <p>Active</p>
+                            @else
+                            <p>Not Active</p>
+                            @endif
                         <td>
                             <form method="post" action="#"> 
                                 <a href="#" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a>
