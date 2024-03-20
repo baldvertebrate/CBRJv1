@@ -46,16 +46,15 @@
                         <td>@php 
                             $employee = App\Models\Employee::where('id', '=', $user->employee->id)->first();
                             @endphp
-
                             @if($employee->account_status ==1)
                             <p>Active</p>
                             @else
                             <p>Not Active</p>
                             @endif
+                        </td>
                         <td>
                             <form method="post" action="#"> 
                                 <a href="#" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a>
-                           
                                 @csrf 
                                 @method('delete')
                             <button type="submit" onclick="return confirm('This will delete the entry!\nAre you sure?')" class="btn btn-danger btn-sm">Delete <span class="fas fa-trash"></span></a>
